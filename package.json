@@ -1,0 +1,14 @@
+{
+  "name": "vue_create",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/smk1628/Vue_environment-construction.git",
+  "author": "smk1628 <1628150422@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "html-webpack-plugin": "^4.5.1",
+    "webpack": "^5.14.0",
+    "webpack-cli": "^4.3.1"
+  },
+  "dependencies": {}
+}
