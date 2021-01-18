@@ -67,5 +67,22 @@ module.exports = {
         contentBase: './dist', //将 dist 目录下的文件 serve 到 localhost:8080 下
         //hot: true   //启用热模替换
     },
-    devtool: 'source-map',  // 代码调试
+    devtool: 'eval-source-map',  // 代码调试
+    /* 模块引入解析 */
+    resolve:{
+        /*
+            1.简化模块路径的编写
+            2.加快打包 
+         */
+        alias:{ //模块路径别名
+            '@':path.resolve(__dirname,'src'),
+            '@components':path.resolve(__dirname,'src/components'),
+            'vue$':'vue/dist/vue.esm.js'  //配置vue引入的为带template编译器的版本
+        },
+        extensions:['.js','.vue']   //指定哪些模块的后缀名可以省略
+    },
+    /* 关闭 webpack 的性能提示 */
+    performance: {
+        hints:false
+    }
 }
