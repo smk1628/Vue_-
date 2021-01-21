@@ -23,7 +23,12 @@ module.exports = {
                 use: {
                   loader: 'babel-loader',
                   options: {
-                    presets: ['@babel/preset-env'], //配置预设包(包含流多个ES语法解析的plugin包)
+                    presets: [ //使用@babel/runtime-corejs2解析async await等一些新语法
+                        ['@babel/preset-env',{
+                            useBuiltIns:'usage',
+                            'corejs':2
+                        }] 
+                    ], //配置预设包(包含流多个ES语法解析的plugin包)
                     plugins:[   //配置预设包之外的包
 
                     ]
@@ -66,6 +71,13 @@ module.exports = {
         open:true,
         contentBase: './dist', //将 dist 目录下的文件 serve 到 localhost:8080 下
         //hot: true   //启用热模替换
+        //配置代理
+        /* proxy: {
+            '/api': {
+              target: 'http://localhost:4000',
+              pathRewrite: {'^/api' : ''}
+            }
+          } */
     },
     devtool: 'eval-source-map',  // 代码调试
     /* 模块引入解析 */
