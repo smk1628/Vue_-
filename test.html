@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+const TESTFN = 'testfn'
+const TEST = 'test'
+const app = {
+    // [TESTFN]:function(){
+    //     console.log('test')
+    // },
+    [TESTFN](){
+        console.log(TESTFN+'()')
+    },
+    [TEST]:TEST
+}
+
+console.log(app) //test.html:25 {test: "test", testfn: ƒ}
+
+</script>
+</html>

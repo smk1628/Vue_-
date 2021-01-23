@@ -1,15 +1,13 @@
 <template>
-  <div>
-        <h1>App</h1>
-  </div>
+  <h2>我是About内容</h2>
 </template>
 
 <script>
 export default {
-    
+
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>

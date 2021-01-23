@@ -1,0 +1,42 @@
+<template>
+   <li class="item">
+        <a :href='user.url'>
+            <img :src='user.img_url' alt="pic"/>
+            <span class="name">{{user.username}}</span>
+        </a>
+    </li>
+</template>
+
+<script>
+export default {
+    props:{
+        user:Object
+    }
+}
+</script>
+
+<style>
+.item {
+	position: relative;
+	width: 150px;
+	height: 150px;
+	list-style: none;
+	margin-top: 20px;
+    float: left;
+}
+.item .name{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.item img {
+	display: block;
+	width: 130px;
+	height: 130px;
+	background-color: silver;
+	position: absolute;
+	top: 0px;
+	left: 10px;
+}
+</style>

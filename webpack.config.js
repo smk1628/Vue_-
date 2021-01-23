@@ -10,7 +10,8 @@ module.exports = {
     //出口
     output:{
         path:path.resolve(__dirname,'dist'), //绝对路径
-        filename:'bundle.js' //生成打包后的文件名
+        filename:'bundle.js', //生成打包后的文件名
+        publicPath:'/' //引入打包文件的路径左侧以/开头
     },
     //模块打包器
     module:{
@@ -60,7 +61,7 @@ module.exports = {
         new VueLoaderPlugin(),
         new CleanWebpackPlugin(), //每次构建前清理/dist文件夹
         new HtmlWebpackPlugin({
-            template: './src/index.html' //在此目录下查找主页面文件
+            template: './index.html' //在此目录下查找主页面文件
         }) //自动引入所有打包后的js并生成新的页面文件
     ],
     //模式
@@ -69,7 +70,7 @@ module.exports = {
     devServer: {
         port:8081,
         open:true,
-        contentBase: './dist', //将 dist 目录下的文件 serve 到 localhost:8080 下
+        //contentBase: './dist', //将 dist 目录下的文件 serve 到 localhost:8080 下
         //hot: true   //启用热模替换
         //配置代理
         /* proxy: {
@@ -78,6 +79,7 @@ module.exports = {
               pathRewrite: {'^/api' : ''}
             }
           } */
+        historyApiFallback:true, //任意404响应都可能需要被替换为index.html
     },
     devtool: 'eval-source-map',  // 代码调试
     /* 模块引入解析 */
